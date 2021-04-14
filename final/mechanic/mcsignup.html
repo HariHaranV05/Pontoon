@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Mechanic Details</title>
+	<head>
+	<style>
+		label{
+        display: inline-block;
+        width:20%;
+        padding-left:500px;
+		padding-top:25px;
+		color:white;
+        text-align: left;
+        font-family:calibri;
+        font-size:x-large;
+        letter-spacing:1px;
+        line-height:30px;
+      }
+	  body{
+		background-image: url("img/professional-mechanics-in-brisbane.jpg");
+		background-repeat: no-repeat;
+		background-size:100% 100%;
+	  }
+	  
+		
+	</style>
+<body>
+	   <form name="mccreate"  method="POST" action="includes/mcsignup.php" >   
+          <label>Name</label>
+          <input type="text" name="b1" placeholder="Enter Name" tabindex="1" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+	
+          <label>Shop Name</label>
+          <input type="text" name="b2" placeholder="Enter Shop Name" tabindex="2" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Address</label>
+          <input type="text" name="b3" placeholder="Enter Address" tabindex="3" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Log Id</label>
+          <input type="text" name="b4" placeholder="Enter Logid" tabindex="1" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+		  
+          <label>Mobile Number</label>
+          <input type="text" name="b5" placeholder="Enter Mobile Number" tabindex="4" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Which type of vehicle do you repair</label>
+          <input type="radio" name="r1" value="Twowheeler"/><span style="color:white;font-family:calibri;">Two wheeler</span>
+		  <input type="radio" name="r1" value="FourWheeler"/><span style="color:white;font-family:calibri;">Four wheeler</span>
+		  <input type="radio" name="r1" value="Sixwheeler"/><span style="color:white;font-family:calibri;">Transport wheeler</span>
+		  
+		  
+		  <label>Towing option</label>
+		  <input type="radio" name="r2" value="yes"/><span style="color:white;font-family:calibri;">yes</span>
+		  <input type="radio" name="r2" value="no"/><span style="color:white;font-family:calibri;">no</span>
+		  
+		  
+		  <label>Working Time</label>
+		  <input type="radio" name="r3"  value="24" /><span style="color:white;font-family:calibri;">24hrs</span>
+		  <input type="radio" name="r3" value="12" /><span style="color:white;font-family:calibri;">12hrs</span>
+		  
+
+          <label>Password</label>
+          <input type="text" name="b6" placeholder="Enter Password" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Re-Type Password</label>
+          <input type="text" name="b7" placeholder="Re-Type Password" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+		  
+		  <label>Enter Location</label>
+          <input type="text" name="b8" placeholder="Enter Location" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+        <br/><br/>
+        <button class="bt1" type="submit" name="su" style="padding:10px;background-color:orange;border-radius:10px;color:white;margin-left:700px;">Submit </button>
+	</form>
+</body>	
+
+</html>

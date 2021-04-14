@@ -1,0 +1,163 @@
+<?php
+	include_once 'includes/conn.php';
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="create.css">
+    <style media="screen">
+      label{
+        display: inline-block;
+        width:20%;
+        padding-left:500px;
+		padding-top:25px;
+		color:white;
+        text-align: left;
+        font-family:calibri;
+        font-size:x-large;
+        letter-spacing:1px;
+        line-height:30px;
+      }
+	  body{
+	  background-image: url("img/professional-mechanics-in-brisbane.jpg");
+	  background-repeat: no-repeat;
+	  
+	  }
+    </style>
+    <script type="text/javascript">
+      function fnInput()
+      {
+        var fname=(document.create.b1.value).toString().trim();
+        if(fname==""||fname.length<4)
+        {
+          alert("Invalid user fname should atleast four letters!!");
+          document.create.b1.focus();
+          return false;
+        }
+        var lname=(document.create.b2.value).toString().trim();
+        if(lname=="" || lname.length<4)
+        {
+          alert("Invalid user lname should atleast four letters!!");
+          document.create.b2.focus();
+          return false;
+        }
+        var email=(document.create.b3.value);
+        var atpos1=email.indexOf("@");
+        var atpos2=email.lastIndexOf("@");
+
+        if(atpos1==-1 || atpos1<1 || atpos1!=atpos2)
+        {
+          alert("Invalid Emailid");
+          document.create.b3.focus();
+          return false;
+        }
+        var logid=(document.create.b4.value).toString().trim();
+        if(logid<5)
+        {
+          alert("ID must atleast contain mionimum 5 chars");
+          document.create.b4.focus();
+          return false;
+        }
+        var re=/[0-9]/;
+        if(!re.test(logid))
+        {
+          alert("Atleast conatain one numeric value");
+          create.b4.focus();
+          return false;
+        }
+        var mob=document.create.b5.value;
+        if(isNaN(mob))
+        {
+          alert("Mobile number should only in Numbers");
+          document.create.b5.focus();
+          return false;
+        }
+		var S = mob.toString().trim();
+        if(S.length!=10)
+        {
+			alert( "Invalid Mobile Number!!! Must have 10 digits..." );
+            document.form1.b5.focus();
+            return false;
+        }
+
+
+        var pass=(document.create.b6.value).toString().trim();
+        if(pass.length<6)
+        {
+          alert("Password must contain 6 digits");
+          document.create.b6.focus();
+          return false;
+        }
+
+        re=/[A-Z]/
+        if(!re.test(pass))
+        {
+          alert("Password must contain one cap letter");
+          create.b6.focus();
+          return false;
+        }
+
+        re=/[a-z]/
+        if(!re.test(pass))
+        {
+          alert("Password must contain one small letter");
+          create.b6.focus();
+          return false;
+        }
+
+        re=/[0-9]/
+        if(!re.test(pass))
+        {
+          alert("Password must contain on number");
+          create.b6.focus();
+          return false;
+        }
+        var repass=(document.create.b7.value).toString().trim();
+
+        if(repass!=pass)
+        {
+          alert("Password are does not same Retype Password");
+          document.create.b7.focus();
+          return false;
+
+        }
+        return true;
+
+      }
+    </script>
+  </head>
+  <body>
+
+    <form name="create" action="includes/signup.php" method="POST" onsubmit="return fnInput();">
+      <div class="form">
+        
+          <label>FirstName</label>
+          <input type="text" name="b1" placeholder="Enter First Name" tabindex="1" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>LastName</label>
+          <input type="text" name="b2" placeholder="Enter Last Name" tabindex="2" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Email</label>
+          <input type="text" name="b3" placeholder="Enter Valid mail id" tabindex="3" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Login id</label>
+          <input type="text" name="b4" placeholder="Enter Loginid" tabindex="4" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Mobile Number</label>
+          <input type="text" name="b5" placeholder="Enter Mobile number" tabindex="5" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Password</label>
+          <input type="text" name="b6" placeholder="Enter Password" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+
+          <label>Re-Type Password</label>
+          <input type="text" name="b7" placeholder="Re-Type Password" style="padding:10px;border-radius:10px;background-color:#ffffff;opacity: 0.6; filter: alpha(opacity=60);"><br/>
+        <br/><br/>
+        <button class="bt1" type="submit" name="su" style="padding:10px;background-color:orange;border-radius:10px;color:white;margin-left:700px;">Submit </button>
+      </div>
+
+    </form>
+
+  </body>
+</html>
